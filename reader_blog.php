@@ -25,7 +25,9 @@ if (isset($_POST['insert'])) {
     header('Location: admin/blog_post.php');
     exit;
 
-} if (isset($_POST['list'])) {
+}
+
+if (isset($_POST['list'])) {
 
     header('Location: admin/blog_list.php');
     exit;
