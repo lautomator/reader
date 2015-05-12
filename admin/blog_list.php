@@ -1,6 +1,7 @@
 <?php
 
-$inc_path = 'XXXXXXXXXXXXXXX';
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
 
 require_once $inc_path . 'connection.inc.php' ;
 
@@ -69,7 +70,7 @@ if (isset($_POST['view'])) {
 
         <h1>Reader</h1>
 
-        <!--// Main content  //-->
+        <!-- Main content  -->
         <div id="main_content">
 
         <?php
@@ -82,7 +83,7 @@ if (isset($_POST['view'])) {
         <?php
         } else {?>
 
-            <!--// Lists all of the blog entries: //-->
+            <!-- Lists all of the blog entries: -->
             <table>
                 <tr>
                     <th scope="col"><h3>Created</h3></th>
@@ -122,9 +123,9 @@ if (isset($_POST['view'])) {
         }
         ?>
 
-        </div><!--// Main content ends //-->
+        </div><!-- Main content ends -->
 
-    </div><!--// Container ends //-->
+    </div><!-- Container ends -->
 
     <!-- footer -->
     <?php require $inc_path .'footer.inc.php'; ?>

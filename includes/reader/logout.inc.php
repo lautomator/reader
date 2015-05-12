@@ -1,5 +1,8 @@
 <?php
 
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
+
 // Logout
 if (isset($_POST['logout'])) {
     
@@ -15,7 +18,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
     
     // Redirect to the login page.
-    header('Location: http://automaton.host-ed.me/reader/reader_login.php');
+    header("Location: $home");
 }
 ?>
 

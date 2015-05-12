@@ -1,6 +1,7 @@
 <?php
 
-$inc_path = 'XXXXXXXXXXXXXXX';
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
 
 require $inc_path . 'connection.inc.php';
 
@@ -100,10 +101,10 @@ if (isset($_POST['cancel'])) {
 
         <h1>Reader</h1>
 
-        <!--// Main content  //-->
+        <!-- Main content  -->
         <div id="main_content">
 
-            <!--// The update record form //-->
+            <!-- The update record form -->
             <h2>Update</h2>
 
             <?php
@@ -147,13 +148,13 @@ if (isset($_POST['cancel'])) {
                     <input name="article_id" type="hidden"
                         value="<?php echo $article_id; ?>">
                 </p>
-            </form><!--// End of update form //-->
+            </form><!-- End of update form -->
             <?php
             }
             ?>
-        </div><!--// Main content ends //-->
+        </div><!-- Main content ends -->
 
-    </div><!--// Container ends //-->
+    </div><!-- Container ends -->
 
     <!-- footer -->
     <?php require $inc_path . 'footer.inc.php'; ?>

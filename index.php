@@ -21,15 +21,11 @@ $result = $conn->query($sql) or die(mysqli_error());
 $numRows = $result->num_rows;
 
 // If the insert entry button is pressed, redirect to the post page.
-if (isset($_POST['insert'])) {
+if (isset($_POST['login'])) {
 
-    header('Location: admin/blog_post.php');
+    header('Location: reader_login.php');
     exit;
 
-} if (isset($_POST['list'])) {
-
-    header('Location: admin/blog_list.php');
-    exit;
 }
 
 // Function to convert an otherwise long block of text into paragraphs.
@@ -107,23 +103,17 @@ function format_paragraphs($text)
                 }
                 ?>
 
-            <p><a href="reader.php">
-                less</a></p>
-
             <p class="hrule">&nbsp;</p>
             <?php
             }
             ?>
 
-            <!-- Post and List actions -->
+            <!-- Login -->
             <form id="form1" action="" method="post">
                 <!-- Post a new entry -->
                 <p>
-                <input type="submit" name="insert" value="Insert new entry"
-                    id="insert">
-                <!-- List existing entries -->
-                <input type="submit" name="list" value="List existing entries"
-                    id="list">
+                <input type="submit" name="login" value="Login"
+                    id="login">
                 </p>
             </form>
             <p>&nbsp;</p>
@@ -133,7 +123,6 @@ function format_paragraphs($text)
 
     <!-- footer -->
     <?php require $inc_path . 'footer.inc.php'; ?>
-
 
 </body>
 </html>

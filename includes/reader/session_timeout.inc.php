@@ -1,5 +1,8 @@
 <?php
 
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
+
 // Start the sesssion and protect access to the page.
 session_start();
 ob_start();
@@ -9,9 +12,6 @@ $timelimit = 600;
 
 // Get the current time.
 $now = time();
-
-// Redirect if timeout occurs.
-$redirect = 'http://automaton.host-ed.me/reader/reader_login.php';
 
 // If the session var is not set, redirect back to the login page.
 if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated']

@@ -1,6 +1,7 @@
 <?php
 
-$inc_path = 'XXXXXXXXXXXXXXX';
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
 
 if (isset($_POST['insert'])) {
 
@@ -70,12 +71,12 @@ if (isset($_POST['list'])) {
 
         <h1>Reader</h1>
 
-        <!--// Main content  //-->
+        <!-- Main content  -->
         <div id="main_content">
 
-            <!--// The insert record form //-->
+            <!-- The insert record form -->
             <h3>Insert a new blog entry</h3>
-            <!--// Error handling. //-->
+            <!-- Error handling. -->
             <?php
             if (isset($error)) {
                 echo "<p class=\"alert\">$error</p>";
@@ -94,13 +95,13 @@ if (isset($_POST['list'])) {
                         class="formbox" id="article"></textarea>
                 </p>
                 <p>
-                    <!--// Insert the entry //-->
+                    <!-- Insert the entry -->
                     <input type="submit" name="insert" value="Post"
                         id="insert">
-                    <!--.. List existing entries //-->
+                    <!-- List existing entries -->
                     <input type="submit" name="list" value="Cancel"
                         id="list">
-                    <!--// Clear the form //-->
+                    <!-- Clear the form -->
                      <input type="submit" name="clear" value="Clear"
                         id="clear">
                     <?php
@@ -116,9 +117,9 @@ if (isset($_POST['list'])) {
                     }
                     ?>
                 </p>
-            </form><!--// End of insert form //-->
-        </div><!--// Main content ends //-->
-    </div><!--// Container ends //-->
+            </form><!-- End of insert form -->
+        </div><!-- Main content ends -->
+    </div><!-- Container ends -->
 
     <!-- footer -->
     <?php require $inc_path . 'footer.inc.php'; ?>

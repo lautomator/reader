@@ -1,11 +1,13 @@
 <?php
 
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
+
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/connection.inc.php';
+
 // Authenticate a user whose information is stored in a database.
 // Establish a connection to the database.
-$inc_path = 'XXXXXXXXXXXXXXX';
-
-require_once $inc_path . 'connection.inc.php';
-
 $conn = dbConnect('read');
 // Get the user details from the database.
 $sql = 'SELECT salt, pwd FROM users WHERE username = ?';
