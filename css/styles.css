@@ -1,172 +1,46 @@
 @charset "UTF-8";
 
 @import url('http://fonts.googleapis.com/css?family=Dosis:400,800');
-@import url('http://fonts.googleapis.com/css?family=Cutive+Mono');
 
 * {
   border-collapse: collapse;
-  line-height: 24px;
+  margin: 0;
+  padding: 0;
 }
 
+/* =======================
+   Layout
+======================= */
 body {
-  background-color: snow;
-  margin-top: 40px;
 }
 
 #page {
+  background-color: cyan;
   margin: 0 auto 0 auto;
   min-height: 600px;
   width: 600px;
 }
 
+header {
+  background-color: yellow;
+  margin: 0 auto 0 auto;
+  position: relative;
+  width: 600px;
+}
+
 footer {
+  background-color: yellow;
   bottom: 20px;
   margin: 0 auto 0 auto;
   position: relative;
   width: 600px;
 }
 
+
+/* =======================
+   Typography
+======================= */
 h1, h2, h3 {
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
-}
-
-p, ul, li, td, label {
-  color: #000;
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  font-size: 16px;
-  }
-
-p.leader {
-  margin: 25px 0 50px 0;
-
-  }
-
-p.un {
-    text-decoration: underline;
-}
-
-.hrule {
-  border-bottom: dotted #000 1px;
-  }
-
-/* links */
-.nav {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
-  letter-spacing: .1em;
-  padding: 0 20px 0 0;
-}
-
-.nav ul {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.nav li {
-  display: inline;
-
-}
-
-.nav li a{
-  color: #B22222;
-  text-decoration: underline;
-}
-
-.nav li a:hover {
-  color: black;
-}
-
-a {
-  color: #B22222;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: black;
-  text-decoration: underline;
-}
-
-
-/* typography */
-
-.label {
-  text-align: left;
-  }
-
-.footerText {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  font-size: 12px;
-  font-style: italic;
-  color: #000;
-  }
-
-.footerText>a {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  font-size: 12px;
-  font-style: italic;
-  color: #000;
-  }
-
-.caption {
-  margin-top: 0;
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  color: #333;
-  font-size: 16px;
-  font-style: italic;
-}
-
-img {
-  border-radius: 8px;
-  box-shadow: 0 0 8px #333;
-  border-bottom: 1px solid #333;
-  border-right: 1px solid #333;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
-}
-
-.alert {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  color: red;
-  font-style: italic;
-  }
-
-p.alert, span.alert {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  color: red;
-  font-style: italic;
-  }
-
-textarea, input, select {
-  margin: 0;
-  text-align: left;
-  font-family: 'Cutive Mono', serif;
-  font-size: 14px;
-}
-td, th {
-  text-align: left;
-  padding-right: 50px;
-}
-figcaption {
-  font-family: 'Cutive Mono', serif;
-  font-weight: normal;
-  color: #000;
-  font-size: 12px;
-  padding-bottom: 25px;
-}
-input.formbox  {
-  width: 500px;
-  height: 20px;
-  border: solid 1px #999;
-  border-radius: 3px;
 }

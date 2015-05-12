@@ -58,7 +58,7 @@ if (isset($_POST['list'])) {
 
     <div id="page">
 
-        <h1>Reader</h1>
+        <header><h1>Reader</h1></header>
 
         <div id="main_content">
 

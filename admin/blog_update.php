@@ -99,7 +99,7 @@ if (isset($_POST['cancel'])) {
 
     <div id="page">
 
-        <h1>Reader</h1>
+        <header><h1>Reader</h1></header>
 
         <!-- Main content  -->
         <div id="main_content">

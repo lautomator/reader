@@ -51,9 +51,11 @@ if (isset($_POST['login'])) {
 
         <div id="page">
 
-            <h1>Reader</h1>
+            <header>
+                <h1>Reader</h1>
 
-            <h2>Login</h2>
+                <h2>Login</h2>
+            </header>
 
             <?php
 
