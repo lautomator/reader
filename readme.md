@@ -7,3 +7,5 @@ These are the source files for a simple PHP blog called **Reader**.
 
 The staging area for **Reader** is *TBA*.
 
+The dev un and password is *xampp*.
+

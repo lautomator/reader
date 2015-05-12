@@ -31,7 +31,7 @@ if (isset($_GET['article_id']) && !$_POST) {
 if (isset($_POST ['update'])) {
 
     // prepare update query
-    if (!empty($_POST['image_id'])) {
+    if (!empty($_POST['article'])) {
 
         $sql = 'UPDATE blog SET image_id = ?, title = ?, article = ?
             WHERE article_id = ?';

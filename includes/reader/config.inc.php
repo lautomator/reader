@@ -6,6 +6,7 @@
 // Redirect url
 $redirect = 'http://localhost/reader/reader_login.php';
 $home = 'http://localhost/reader/';
+$admin_home = 'http://localhost/reader/reader.php';
 
 // db connection
 // $my_host = 'localhost';

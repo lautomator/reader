@@ -30,7 +30,7 @@ if (sha1($password . $salt) == $storedPwd) {
     // Get the time the session started/
     $_SESSION['start'] = time();
     session_regenerate_id();
-    header("Location: $redirect");
+    header("Location: $admin_home");
     exit;
 
 } else {
