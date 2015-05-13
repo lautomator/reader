@@ -4,9 +4,9 @@
 // * DEV *
 // *******
 // Redirect url
-$redirect = 'http://localhost/reader/reader_login.php';
-$home = 'http://localhost/reader/';
-$admin_home = 'http://localhost/reader/reader.php';
+$redirect = 'http://localhost/reader/htdocs/reader_login.php';
+$home = 'http://localhost/reader/htdocs/';
+$admin_home = 'http://localhost/reader/htdocs/reader.php';
 
 // db connection
 // $my_host = 'localhost';
