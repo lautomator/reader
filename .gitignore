@@ -3,4 +3,4 @@ _backup.sh
 htdocs/_includes
 htdocs/_update.sh
 db
-htdocs/smarty-test.php
+cache
