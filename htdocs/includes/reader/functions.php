@@ -2,7 +2,7 @@
 
 // Reader functions
 
-// Function to convert an otherwise long block of text into paragraphs.
+// convert an otherwise long block of text into paragraphs.
 function format_paragraphs($text)
 {
 
@@ -13,4 +13,19 @@ function format_paragraphs($text)
     $text = trim($text);
 
     return '<p>' . preg_replace('/[\r\n]+/', '</p><p>', $text . '</p>');
+}
+
+// range of years for the copyright notice
+function copyrightYears()
+{
+    $startYear = 2015;
+    $currentYear = date('y');
+    if ($startYear == $currentYear) {
+
+        echo $startYear;
+
+    } else {
+
+        echo "{$startYear}&ndash;{$currentYear}";
+    }
 }
