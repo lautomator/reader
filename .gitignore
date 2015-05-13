@@ -1,5 +1,6 @@
 .DS_Store
 _backup.sh
-_includes
+htdocs/_includes
+htdocs/_update.sh
 db
-
+htdocs/smarty-test.php
