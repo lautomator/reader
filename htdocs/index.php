@@ -5,6 +5,8 @@ require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
 
 require_once $inc_path . 'connection.inc.php';
 
+require $inc_path . 'functions.php';
+
 // Create the database connection.
 $conn = dbConnect('read');
 
@@ -26,19 +28,6 @@ if (isset($_POST['login'])) {
     header('Location: reader_login.php');
     exit;
 
-}
-
-// Function to convert an otherwise long block of text into paragraphs.
-function format_paragraphs($text)
-{
-
-    // Remove brackets and anything within them from Wiki text.
-    $text = preg_replace('/\[\w+\]+/', '', $text);
-
-    // Trim the text.
-    $text = trim($text);
-
-    return '<p>' . preg_replace('/[\r\n]+/', '</p><p>', $text . '</p>');
 }
 
 ?>
