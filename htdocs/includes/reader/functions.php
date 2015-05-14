@@ -2,7 +2,9 @@
 
 // Reader functions
 
-// convert an otherwise long block of text into paragraphs.
+$reader_date = date('m/d/y');
+
+// convert a long block of text into paragraphs
 function format_paragraphs($text)
 {
 
@@ -19,16 +21,15 @@ function format_paragraphs($text)
 function copyrightYears()
 {
     $startYear = 2015;
-    $currentYear = date('y');
+    $currentYear = date('Y');
     if ($startYear == $currentYear) {
 
-        echo $startYear;
+        $years = $startYear;
 
     } else {
 
-        echo "{$startYear}&ndash;{$currentYear}";
+        $years = $startYear . "&ndash;" . $currentYear;
     }
-}
 
-$reader_date = date('m/d/y');
-$reader_yrs = copyrightYears();
+    return $years;
+}

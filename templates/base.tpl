@@ -35,10 +35,9 @@
 
     <!-- footer -->
     <footer>
-        <p class="footerText">
-            {$reader_date} | &copy;{$reader_yrs} {#blogAuthor#}
-        </p>
-    </footer>
+        <p>&copy;&nbsp;{$reader_yrs} {#blogAuthor#}</p>
+        <p>today's date: {$reader_date}</p>
+    </footer><!-- footer ends -->
 
 </body>
 </html>

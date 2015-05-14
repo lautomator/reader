@@ -91,7 +91,7 @@ if (isset($_POST['insert'])) {
                 // Image, if any:
                 if ($row['image_id'] != null) {
 
-                    $filename = "./images/{$row['filename']}";
+                    $filename = "./img/{$row['filename']}";
                     echo "<img src=\"$filename\" alt=\"{$row['caption']}\" />";
                 }
                 ?>
