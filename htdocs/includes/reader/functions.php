@@ -7,7 +7,6 @@ $reader_date = date('m/d/y');
 // convert a long block of text into paragraphs
 function format_paragraphs($text)
 {
-
     // Remove brackets and anything within them from Wiki text.
     $text = preg_replace('/\[\w+\]+/', '', $text);
 
@@ -30,6 +29,5 @@ function copyrightYears()
 
         $years = $startYear . "&ndash;" . $currentYear;
     }
-
     return $years;
 }

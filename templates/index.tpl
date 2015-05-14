@@ -4,8 +4,13 @@
 
 {block name=main}
 
+    <h2>Reader entries</h2>
+
+
+<!-- THIS NEEDS TO BE TURNED INTO A FUNCTION ======= -->
+
     <!-- Display existing blog entries, if any. -->
-    <h2>Existing Blog Entries</h2>
+    
     <p>Total records: <?php echo $numRows ?>.</p>
     <?php
     // Respond if there are no entries.
@@ -36,6 +41,8 @@
     <?php
     }
     ?>
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 
     <!-- Login -->
     <form id="form1" action="" method="post">
