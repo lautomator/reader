@@ -29,3 +29,6 @@ function copyrightYears()
         echo "{$startYear}&ndash;{$currentYear}";
     }
 }
+
+$reader_date = date('m/d/y');
+$reader_yrs = copyrightYears();
