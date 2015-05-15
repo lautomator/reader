@@ -4,52 +4,34 @@
 
 {block name=main}
 
-    <h2>Reader entries</h2>
+    <h2>{#blogTitle#} entries</h2>
 
+    <p>There are: {$entries_read->num_rows} entries.</p>
 
-<!-- THIS NEEDS TO BE TURNED INTO A FUNCTION ======= -->
+    <!-- display the exisiting entries, if any -->
+    {if $entries_read->num_rows == 0}
+        <p>There are no entries. Login to make an entry.</p>
 
-    <!-- Display existing blog entries, if any. -->
-    
-    <p>Total records: <?php echo $numRows ?>.</p>
-    <?php
-    // Respond if there are no entries.
-    if ($numRows == 0) {
-        echo "<p class=\"alert\">There are no entries.</p>" .
-            "<p><a href=\"admin/blog_post.php\">
-            Post an entry</a></p>";
-    }
-    ?>
+    {else}
 
-    <?php while ($row = $result->fetch_assoc()) { ?>
+        {while $row = $entries_read->fetch_assoc()}
+            <p>{$row['date_created']} &mdash; {$row['title']}</p>
 
-    <!-- Use the article ID as an anchor -->
-    <h3 id="<?php  echo $row['article_id'] ?>">
-        <?php echo $row['date_created'] . '&emsp;-->&emsp;' . $row['title']; ?></h3>
-        <?php
-        // Article:
-        echo format_paragraphs($row['article']);
-        // Image, if any:
-        if ($row['image_id'] != null) {
+            <p>{format_paragraphs($row['article'])}</p>
 
-            $filename = "./img/{$row['filename']}";
-            echo "<img src=\"$filename\" alt=\"{$row['caption']}\" />";
-        }
-        ?>
+            {if $row['image_id'] != null}
 
-    <?php
-    }
-    ?>
+                <img src="img/{$row['filename']}" alt="$row['caption']}" />
 
-<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+            {/if}
 
-    <!-- Login -->
+        {/while}
+
+    {/if}
+
+    <!-- login -->
     <form id="form1" action="" method="post">
-        <!-- Post a new entry -->
-        <p>
-        <input type="submit" name="login" value="Login"
-            id="login">
-        </p>
+        <p><input type="submit" name="login" value="Login" id="login"></p>
     </form>
 
 {/block}

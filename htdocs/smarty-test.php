@@ -1,5 +1,7 @@
 <?php
 
+// This page is being used to develop and test smarty templates
+
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/setup.php';
 
@@ -14,10 +16,9 @@ $smarty = new Reader();
 $smarty->assign('reader_date', $reader_date);
 $smarty->assign('reader_yrs', copyrightYears());
 $smarty->assign('entries_read', dbConnectRead());
-
-
+// $smarty->assign('format_entries', format_paragraphs());
 
 // $smarty->debugging = true;
-$smarty->display('base.tpl');
+$smarty->display('index.tpl');
 
 ?>

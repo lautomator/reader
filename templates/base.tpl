@@ -31,7 +31,6 @@
         <div id="main_content">
 
             {block name=main}{/block}
-            <p>There are: {$entries_read->num_rows} entries.</p>
 
         </div><!-- main ends -->
     </div><!-- page ends -->

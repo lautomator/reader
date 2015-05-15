@@ -1,4 +1,0 @@
-{* Smarty *}
-
-Yomama! {$name}
-

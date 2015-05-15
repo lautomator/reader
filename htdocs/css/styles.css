@@ -24,15 +24,12 @@ body {
 header {
   border: 1px dotted #b2b2b2;
   margin: 0 auto 0 auto;
-  position: relative;
   width: 600px;
 }
 
 footer {
   border: 1px dotted #b2b2b2;
-  bottom: 20px;
   margin: 0 auto 0 auto;
-  position: relative;
   width: 600px;
 }
 
@@ -43,4 +40,8 @@ footer {
 h1, h2, h3 {
   font-family: 'Dosis', sans-serif;
   font-weight: 400;
+}
+
+p {
+  margin-top: 25px;
 }

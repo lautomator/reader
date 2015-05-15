@@ -14,7 +14,7 @@ function format_paragraphs($text)
     // Trim the text.
     $text = trim($text);
 
-    return preg_replace('/[\r\n]+/', $text);
+    return preg_replace('/[\r\n]+/', '', $text);
 }
 
 
@@ -36,7 +36,7 @@ function copyrightYears()
 
 
 // make a 'read' connection to the db
-// Create the database connection.
+// create the database connection
 function dbConnectRead() {
 
     $conn = dbConnect('read');
@@ -51,10 +51,4 @@ function dbConnectRead() {
     $result = $conn->query($sql) or die(mysqli_error());
 
     return $result;
-
-    // Number of records
-    // $numRows = $result->num_rows;
 }
-
-
-
