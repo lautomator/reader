@@ -38,8 +38,8 @@
 
     <!-- footer -->
     <footer>
-        <p>&copy;&nbsp;{$reader_yrs} {#blogAuthor#}</p>
-        <p>today's date: {$reader_date}</p>
+        <p>&copy;&nbsp;{$reader_yrs} {#blogAuthor#} | 
+        today's date: {$reader_date}</p>
     </footer><!-- footer ends -->
 
 </body>
