@@ -37,7 +37,6 @@
         }
         ?>
 
-    <p class="hrule">&nbsp;</p>
     <?php
     }
     ?>

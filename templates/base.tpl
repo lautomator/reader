@@ -8,7 +8,9 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a blog.">
+    <meta name="description" content="{#blogSubject#}">
+    <meta name="author" content="{#blogAuthor#}">
+
 
     <link rel="icon" href="images/TBA" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -29,6 +31,7 @@
         <div id="main_content">
 
             {block name=main}{/block}
+            <p>There are: {$entries_read->num_rows} entries.</p>
 
         </div><!-- main ends -->
     </div><!-- page ends -->
