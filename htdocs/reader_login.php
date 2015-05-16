@@ -1,88 +1,39 @@
 <?php
 
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/setup.php';
+
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/config.inc.php';
 
-// Session
-$error = '';
+require_once $inc_path . 'connection.inc.php';
 
+require $inc_path . 'functions.php';
+
+// // Session
 if (isset($_POST['login'])) {
 
     session_start();
 
-    // Trim any leading or trailing whitespace.
+    // trim any leading or trailing whitespace.
     $username = trim($_POST['username']);
 
-    // Encrypt the password.
+    // encrypt the password
     $password = trim($_POST['pwd']);
 
-    // Redirect upon succesfull login.
+    // redirect upon succesfull login.
     $redirect = 'reader.php';
 
-    // Include the authenticaton script.
+    // include the authenticaton script.
     include_once $inc_path . 'authenticate_mysqli.inc.php';
 }
 
+$smarty = new Reader();
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+$smarty->assign('error', '');
+
+// $smarty->debugging = true;
+$smarty->display('login.tpl');
+
 ?>
-
-<!DOCTYPE html>
-<html>
-
-    <head>
-
-        <title>Reader</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-56241017-1', 'auto');
-        ga('send', 'pageview');
-
-        </script>
-
-    </head>
-
-    <body>
-
-        <div id="page">
-
-            <header>
-                <h1>Reader</h1>
-
-                <h2>Login</h2>
-            </header>
-
-            <?php
-
-            // Display errors
-            if ($error) {
-
-                echo "<p class=\"alert\">$error</p>";
-
-            } elseif (isset($_GET['expired'])) {
-
-                echo "<p class=\"alert\">Your session has expired.
-                    Please login again.</p>";
-            }
-            ?>
-
-            <form id="form2" method="post" action="">
-                <label for="username">Username: </label>
-                <input type="text" name="username" id="username"><br>
-                <label for="pwd">Password: </label>
-                <input type="password" name="pwd" id="pwd"><br>
-                <input type="submit" name="login" id="login" value="Login">
-            </form>
-
-        </div>
-
-        <!-- footer -->
-        <?php require $inc_path . 'footer.inc.php'; ?>
-
-    </body>
-</html>

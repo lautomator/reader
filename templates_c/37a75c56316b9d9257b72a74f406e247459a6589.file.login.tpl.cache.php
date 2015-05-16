@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-15 22:29:40
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-16 16:54:41
          compiled from "/Applications/XAMPP/htdocs/reader/templates/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1228566708555657344eb7a6-96909021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '37a75c56316b9d9257b72a74f406e247459a6589' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/login.tpl',
-      1 => 1431721713,
+      1 => 1431787995,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/base.tpl',
-      1 => 1431717746,
+      1 => 1431787581,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'cache_lifetime' => 3600,
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_5556573452c347_43263144',
   'variables' => 
   array (
     'reader_yrs' => 0,
     'reader_date' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_5556573452c347_43263144',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5556573452c347_43263144')) {function content_5556573452c347_43263144($_smarty_tpl) {?>
 
@@ -68,8 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
             
 
-    <h2><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
- entries</h2>
+    <h2>Login</h2>
 
 
     <!-- error handling -->

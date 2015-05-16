@@ -4,7 +4,7 @@
 
 {block name=main}
 
-    <h2>{#blogTitle#} entries</h2>
+    <h2>Login</h2>
 
 
     <!-- error handling -->
