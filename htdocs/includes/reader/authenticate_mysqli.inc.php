@@ -1,39 +1,48 @@
 <?php
 
-require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-    'reader/config.inc.php';
+function validatePwd($un, $pw)
+{
 
-require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-    'reader/connection.inc.php';
+    require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+        'reader/config.inc.php';
 
-// Authenticate a user whose information is stored in a database.
-// Establish a connection to the database.
-$conn = dbConnect('read');
-// Get the user details from the database.
-$sql = 'SELECT salt, pwd FROM users WHERE username = ?';
+    require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+        'reader/connection.inc.php';
 
-// Init and prepared statement.
-$stmt = $conn->stmt_init();
-$stmt->prepare($sql);
-$stmt->bind_param('s', $username);
-$stmt->bind_result($salt, $storedPwd);
-$stmt->execute();
-$stmt->fetch();
+    // trim any leading or trailing whitespace.
+    $username = trim($un);
+    $password = trim($pw);
 
-// Validate the results of the query.
-// Encrypt the submitted password with the salt and
-// compare it with the stored password.
-if (sha1($password . $salt) == $storedPwd) {
+    // Authenticate a user whose information is stored in a database.
+    // Establish a connection to the database.
+    $conn = dbConnect('read');
+    // Get the user details from the database.
+    $sql = 'SELECT salt, pwd FROM users WHERE username = ?';
 
-    // Generate a new session.
-    $_SESSION['authenticated'] = 'LittleCharlie';
-    // Get the time the session started/
-    $_SESSION['start'] = time();
-    session_regenerate_id();
-    header("Location: $admin_home");
-    exit;
+    // Init and prepared statement.
+    $stmt = $conn->stmt_init();
+    $stmt->prepare($sql);
+    $stmt->bind_param('s', $username);
+    $stmt->bind_result($salt, $storedPwd);
+    $stmt->execute();
+    $stmt->fetch();
 
-} else {
+    // Validate the results of the query.
+    // Encrypt the submitted password with the salt and
+    // compare it with the stored password.
+    if (sha1($password . $salt) == $storedPwd) {
 
-    $error = 'Invalid username or password.';
+        // Generate a new session.
+        $_SESSION['authenticated'] = 'LittleCharlie';
+        // Get the time the session started/
+        $_SESSION['start'] = time();
+        session_regenerate_id();
+        header("Location: $admin_home");
+        exit;
+
+    } else {
+
+        $error = 'Invalid username or password.';
+        return $error;
+    }
 }
