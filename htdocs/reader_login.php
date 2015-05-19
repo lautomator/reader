@@ -10,23 +10,33 @@ require_once $inc_path . 'connection.inc.php';
 
 require $inc_path . 'functions.php';
 
-// include the authenticaton script.
-include_once $inc_path . 'authenticate_mysqli.inc.php';
-
-$smarty = new Reader();
-$smarty->assign('reader_date', $reader_date);
-$smarty->assign('reader_yrs', copyrightYears());
+$err = '';
 
 // Session
 if (isset($_POST['login'])) {
 
     session_start();
 
-    validatePwd($_POST['username'], $_POST['pwd']);
-    $smarty->assign('error', validatePwd($_POST['username'], $_POST['pwd']));
+    // include the authenticaton script.
+    include_once $inc_path . 'authenticate_mysqli.inc.php';
+
+    // escape html chars
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['pwd']);
+    
+    if (!validatePwd($username, $password)) {
+        $err = 'Invalid username or password.';
+    }
 }
+
+$smarty = new Reader();
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+$smarty->assign('error', $err);
 
 // $smarty->debugging = true;
 $smarty->display('login.tpl');
 
 ?>
+
+

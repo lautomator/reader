@@ -1,15 +1,14 @@
 <?php
 
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/config.inc.php';
+
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/connection.inc.php';
+
 function validatePwd($un, $pw)
 {
-
-    require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-        'reader/config.inc.php';
-
-    require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-        'reader/connection.inc.php';
-
-    // trim any leading or trailing whitespace.
+    // trim
     $username = trim($un);
     $password = trim($pw);
 
@@ -37,12 +36,8 @@ function validatePwd($un, $pw)
         // Get the time the session started/
         $_SESSION['start'] = time();
         session_regenerate_id();
-        header("Location: $admin_home");
+        header("Location: http://localhost/reader/htdocs/reader.php");
+        // header("Location: $admin_home");
         exit;
-
-    } else {
-
-        $error = 'Invalid username or password.';
-        return $error;
     }
 }
