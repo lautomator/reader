@@ -17,7 +17,7 @@
         {while $row = $entries_read->fetch_assoc()}
             <p>{$row['date_created']} &mdash; {$row['title']}</p>
 
-            <p>{format_paragraphs($row['article'])}</p>
+            <p>{formatParagraphs($row['article'])}</p>
 
             {if $row['image_id'] != null}
 

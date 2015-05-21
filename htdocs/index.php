@@ -10,7 +10,7 @@ require_once $inc_path . 'connection.inc.php';
 
 require $inc_path . 'functions.php';
 
-// If the login button is pressed, redirect to the post page.
+// login
 if (isset($_POST['login'])) {
 
     header('Location: reader_login.php');

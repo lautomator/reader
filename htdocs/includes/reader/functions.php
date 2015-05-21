@@ -6,8 +6,7 @@ $reader_date = date('m/d/y');
 
 
 // convert a long block of text into paragraphs
-function format_paragraphs($text)
-{
+function formatParagraphs($text) {
     // Remove brackets and anything within them from Wiki text.
     $text = preg_replace('/\[\w+\]+/', '', $text);
 
@@ -18,9 +17,27 @@ function format_paragraphs($text)
 }
 
 
+// get summary text for an entry
+function summaryText($text) {
+
+    // the first 100 words and end on a sentence
+    $extract = substr($text, 0, 100);
+
+    // position of the last space in the substring
+    $lastsp = strpos($extract, ' ', 95);
+
+    if ($lastsp == null) {
+
+        // ensure a full word
+        $lastsp = strpos($extract, ' ', 80);
+    }
+
+    return substr($extract, 0, $lastsp) . '... ';
+}
+
+
 // range of years for the copyright notice
-function copyrightYears()
-{
+function copyrightYears() {
     $startYear = 2015;
     $currentYear = date('Y');
     if ($startYear == $currentYear) {

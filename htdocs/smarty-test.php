@@ -1,41 +1,39 @@
 <?php
 
-// This page is being used to develop and test smarty templates
-
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/setup.php';
 
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/config.inc.php';
 
+require_once $inc_path . 'session_timeout.inc.php';
+
 require_once $inc_path . 'connection.inc.php';
+
+require $inc_path . 'logout.inc.php';
 
 require $inc_path . 'functions.php';
 
-// // Session
-if (isset($_POST['login'])) {
+// insert an entry
+if (isset($_POST['insert'])) {
 
-    session_start();
+    header('Location: admin/blog_post.php');
+    exit;
+}
 
-    // trim any leading or trailing whitespace.
-    $username = trim($_POST['username']);
+// list exisitng entries in admin
+if (isset($_POST['list'])) {
 
-    // encrypt the password
-    $password = trim($_POST['pwd']);
-
-    // redirect upon succesfull login.
-    $redirect = 'reader.php';
-
-    // include the authenticaton script.
-    include_once $inc_path . 'authenticate_mysqli.inc.php';
+    header('Location: admin/blog_list.php');
+    exit;
 }
 
 $smarty = new Reader();
 $smarty->assign('reader_date', $reader_date);
 $smarty->assign('reader_yrs', copyrightYears());
-$smarty->assign('error', '');
+$smarty->assign('entries_read', dbConnectRead());
 
 // $smarty->debugging = true;
-$smarty->display('login.tpl');
+$smarty->display('reader.tpl');
 
 ?>
