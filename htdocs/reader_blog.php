@@ -1,14 +1,45 @@
 <?php
 
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/setup.php';
+
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/config.inc.php';
+
+require_once $inc_path . 'session_timeout.inc.php';
 
 require_once $inc_path . 'connection.inc.php';
 
 require $inc_path . 'functions.php';
 
-// Create the database connection.
-$conn = dbConnect('read');
+// insert an entry
+if (isset($_POST['insert'])) {
+
+    header('Location: admin/blog_post.php');
+    exit;
+}
+
+// list exisitng entries in admin
+if (isset($_POST['list'])) {
+
+    header('Location: admin/blog_list.php');
+    exit;
+}
+
+$smarty = new Reader();
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+$smarty->assign('entries_read', dbConnectRead());
+
+// $smarty->debugging = true;
+$smarty->display('reader.tpl');
+
+
+
+
+
+
+
 
 // Select the databse.
 // INNER will include only the records found with the exact match.
@@ -120,8 +151,6 @@ if (isset($_POST['insert'])) {
         </div><!-- Main content ends -->
     </div><!-- Container ends -->
 
-    <!-- footer -->
-    <?php require $inc_path . 'footer.inc.php'; ?>
 
 
 </body>
