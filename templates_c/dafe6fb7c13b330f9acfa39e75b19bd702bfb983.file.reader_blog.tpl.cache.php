@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 17:29:02
-         compiled from "/Applications/XAMPP/htdocs/reader/templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2055433848555636920f95c1-78621247%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 17:45:02
+         compiled from "/Applications/XAMPP/htdocs/reader/templates/reader_blog.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1984604310555dfd7e727471-66866093%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '46eb341bcc6bf3cca9930f3ba5bb6f7d79bd4061' => 
+    'dafe6fb7c13b330f9acfa39e75b19bd702bfb983' => 
     array (
-      0 => '/Applications/XAMPP/htdocs/reader/templates/index.tpl',
-      1 => 1432221993,
+      0 => '/Applications/XAMPP/htdocs/reader/templates/reader_blog.tpl',
+      1 => 1432223083,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
@@ -17,21 +17,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2055433848555636920f95c1-78621247',
+  'nocache_hash' => '1984604310555dfd7e727471-66866093',
   'function' => 
   array (
   ),
-  'cache_lifetime' => 3600,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_555636921f0d16_91311477',
   'variables' => 
   array (
     'reader_yrs' => 0,
     'reader_date' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_555dfd7e77acf0_67485249',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555636921f0d16_91311477')) {function content_555636921f0d16_91311477($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_555dfd7e77acf0_67485249')) {function content_555dfd7e77acf0_67485249($_smarty_tpl) {?>
 
 <?php  $_config = new Smarty_Internal_Config("reader.conf", $_smarty_tpl->smarty, $_smarty_tpl);$_config->loadConfigVars(null, 'local'); ?>
 
@@ -72,7 +71,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <h2><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
  entries</h2>
 
-    <p>There are: <?php echo $_smarty_tpl->tpl_vars['entries_read']->value->num_rows;?>
+    <p>Welcome. There are: <?php echo $_smarty_tpl->tpl_vars['entries_read']->value->num_rows;?>
  entries.</p>
 
     <!-- display the exisiting entries, if any -->
@@ -82,6 +81,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php }else{ ?>
 
         <?php if (!isset($_smarty_tpl->tpl_vars['row'])) $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable(null);while ($_smarty_tpl->tpl_vars['row']->value = $_smarty_tpl->tpl_vars['entries_read']->value->fetch_assoc()){?>
+
+            <h3 id="<?php echo $_smarty_tpl->tpl_vars['row']->value['article_id'];?>
+">
+
             <p><?php echo $_smarty_tpl->tpl_vars['row']->value['date_created'];?>
  &mdash; <?php echo $_smarty_tpl->tpl_vars['row']->value['title'];?>
 </p>
@@ -100,9 +103,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <?php }?>
 
-    <!-- login -->
+    <!-- post and list form -->
     <form id="form1" action="" method="post">
-        <p><input type="submit" name="login" value="Login" id="login"></p>
+        <!-- post a new entry -->
+        <p>
+        <input type="submit" name="insert" value="Insert new entry"
+            id="insert">
+        <!-- list existing entries -->
+        <input type="submit" name="list"
+            value="List existing entries" id="list">
+        </p>
     </form>
 
 

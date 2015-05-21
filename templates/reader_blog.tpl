@@ -16,24 +16,15 @@
 
         {while $row = $entries_read->fetch_assoc()}
 
+            <h3 id="{$row['article_id']}">
+
             <p>{$row['date_created']} &mdash; {$row['title']}</p>
 
-            {if $row['article']|count_words > 99}
+            <p>{formatParagraphs($row['article'])}</p>
 
-                <p>
-                    {summaryText($row['article'])}
-                    <a href="reader_blog.php#{$row['article_id']}">more</a>
-                </p>
+            {if $row['image_id'] != null}
 
-            {else}
-
-                <p>{formatParagraphs($row['article'])}</p>
-
-                {if $row['image_id'] != null}
-
-                    <img src="img/{$row['filename']}" alt="$row['caption']}" />
-
-                {/if}
+                <img src="img/{$row['filename']}" alt="$row['caption']}" />
 
             {/if}
 
@@ -51,12 +42,6 @@
         <input type="submit" name="list"
             value="List existing entries" id="list">
         </p>
-    </form>
-
-    <!-- logout form -->
-    <form id="logoutForm" method="post" action="">
-        <input name="logout" type="submit" id="logout"
-        value="Logout">
     </form>
 
 {/block}
