@@ -13,7 +13,8 @@
 
 
     <link rel="icon" href="images/TBA" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/reader/htdocs/css/styles.css">
     <script src="js/reader-ga.js"></script>
 
     <title>{#blogTitle#}</title>
@@ -37,7 +38,7 @@
 
     <!-- footer -->
     <footer>
-        <p>&copy;&nbsp;{$reader_yrs} {#blogAuthor#} | 
+        <p>&copy;&nbsp;{$reader_yrs} {#blogAuthor#} |
         today's date: {$reader_date}</p>
     </footer><!-- footer ends -->
 

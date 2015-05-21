@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 19:21:07
-         compiled from "/Applications/XAMPP/htdocs/reader/templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2055433848555636920f95c1-78621247%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 19:21:23
+         compiled from "/Applications/XAMPP/htdocs/reader/templates/blog_list.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1629662306555e029b456900-01156705%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '46eb341bcc6bf3cca9930f3ba5bb6f7d79bd4061' => 
+    '7f402030da54b30db9907a072235c3bc9db791fe' => 
     array (
-      0 => '/Applications/XAMPP/htdocs/reader/templates/index.tpl',
-      1 => 1432221993,
+      0 => '/Applications/XAMPP/htdocs/reader/templates/blog_list.tpl',
+      1 => 1432228535,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
@@ -17,13 +17,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2055433848555636920f95c1-78621247',
+  'nocache_hash' => '1629662306555e029b456900-01156705',
   'function' => 
   array (
   ),
   'cache_lifetime' => 3600,
   'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_555636921f0d16_91311477',
+  'unifunc' => 'content_555e029b49b570_76626800',
   'variables' => 
   array (
     'reader_yrs' => 0,
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555636921f0d16_91311477')) {function content_555636921f0d16_91311477($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_555e029b49b570_76626800')) {function content_555e029b49b570_76626800($_smarty_tpl) {?>
 
 <?php  $_config = new Smarty_Internal_Config("reader.conf", $_smarty_tpl->smarty, $_smarty_tpl);$_config->loadConfigVars(null, 'local'); ?>
 
@@ -73,38 +73,68 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <h2><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
  entries</h2>
 
-    <p>There are: <?php echo $_smarty_tpl->tpl_vars['entries_read']->value->num_rows;?>
+    <p>Welcome. There are: <?php echo $_smarty_tpl->tpl_vars['entries_read']->value->num_rows;?>
  entries.</p>
 
     <!-- display the exisiting entries, if any -->
     <?php if ($_smarty_tpl->tpl_vars['entries_read']->value->num_rows==0){?>
-        <p>There are no entries. Login to make an entry.</p>
+        <p>There are no entries.</p>
 
     <?php }else{ ?>
 
+        <!-- lists the entries -->
+        <table>
+            <tr>
+                <th scope="col"><h3>Created</h3></th>
+                <th scope="col"><h3>Title</h3></th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+
         <?php if (!isset($_smarty_tpl->tpl_vars['row'])) $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable(null);while ($_smarty_tpl->tpl_vars['row']->value = $_smarty_tpl->tpl_vars['entries_read']->value->fetch_assoc()){?>
-            <p><?php echo $_smarty_tpl->tpl_vars['row']->value['date_created'];?>
- &mdash; <?php echo $_smarty_tpl->tpl_vars['row']->value['title'];?>
+
+            <tr>
+                <!-- created -->
+                <td>
+                    <p><?php echo $_smarty_tpl->tpl_vars['row']->value['date_created'];?>
 </p>
-
-            <p><?php echo formatParagraphs($_smarty_tpl->tpl_vars['row']->value['article']);?>
-</p>
-
-            <?php if ($_smarty_tpl->tpl_vars['row']->value['image_id']!=null){?>
-
-                <img src="img/<?php echo $_smarty_tpl->tpl_vars['row']->value['filename'];?>
-" alt="$row['caption']}" />
-
-            <?php }?>
+                </td>
+                
+                <!-- title -->
+                <td>
+                    <p><?php echo substr($_smarty_tpl->tpl_vars['row']->value['title'],0,10);?>
+ ...</p>
+                </td>
+                
+                <!-- edit -->
+                <td>
+                    <p>
+                    <a href="blog_update.php?article_id=<?php echo $_smarty_tpl->tpl_vars['row']->value['article_id'];?>
+">edit</a></p>
+                </td>
+                
+                <!-- delete -->
+                <td>
+                    <a href="blog_delete.php?article_id=<?php echo $_smarty_tpl->tpl_vars['row']->value['article_id'];?>
+">delete</a></p>
+                </td>
+            </tr>
 
         <?php }?>
 
+        </table>
+
     <?php }?>
 
-    <!-- login -->
-    <form id="form1" action="" method="post">
-        <p><input type="submit" name="login" value="Login" id="login"></p>
-    </form>
+        <!-- insert and view -->
+        <form id="form1" action="" method="post">
+            <p>
+            <input type="submit" name="insert" value="Insert new entry"
+                id="insert">
+            <input type="submit" name="view" value="View blog"
+                id="view">
+            </p>
+        </form>
 
 
 
