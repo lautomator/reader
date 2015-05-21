@@ -1,8 +1,18 @@
 <?php
 
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
+    'reader/setup.php';
+
+require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/config.inc.php';
 
+require_once $inc_path . 'session_timeout.inc.php';
+
+require_once $inc_path . 'connection.inc.php';
+
+require $inc_path . 'functions.php';
+
+// process the post TODO: this will be a function
 if (isset($_POST['insert'])) {
 
     // Verify fields have been filled.
@@ -52,77 +62,18 @@ if (isset($_POST['list'])) {
     exit;
 }
 
+// clear the form
+// if (isset($_POST['clear'])) {
+//  // TODO: need to implement javascript function in lieu of this.
+// }
+
+
+$smarty = new Reader();
+// $smarty->assign('err', $error);
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+
+// $smarty->debugging = true;
+$smarty->display('blog_post.tpl');
+
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-    <title>Reader</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
-</head>
-
-<body>
-
-    <div id="page">
-
-        <header><h1>Reader</h1></header>
-
-        <!-- Main content  -->
-        <div id="main_content">
-
-            <!-- The insert record form -->
-            <h3>Insert a new blog entry</h3>
-            <!-- Error handling. -->
-            <?php
-            if (isset($error)) {
-                echo "<p class=\"alert\">$error</p>";
-            }
-            ?>
-
-            <form id="form1" action="" method="post">
-                <p>
-                    <label for="title">Title:</label><br>
-                    <input name="title" type="text" class="formbox"
-                        id="title">
-                </p>
-                <p>
-                    <label for="article">Article:</label><br>
-                    <textarea name="article" cols="60" rows="8"
-                        class="formbox" id="article"></textarea>
-                </p>
-                <p>
-                    <!-- Insert the entry -->
-                    <input type="submit" name="insert" value="Post"
-                        id="insert">
-                    <!-- List existing entries -->
-                    <input type="submit" name="list" value="Cancel"
-                        id="list">
-                    <!-- Clear the form -->
-                     <input type="submit" name="clear" value="Clear"
-                        id="clear">
-                    <?php
-                    // Clear the form if the user wants to start again.
-                    if (isset($_POST['clear'])) {?>
-
-                        <script type="text/javascript">
-                        // Reset the form
-                        document.getElementById("form1").reset();
-                        </script>
-
-                    <?php
-                    }
-                    ?>
-                </p>
-            </form><!-- End of insert form -->
-        </div><!-- Main content ends -->
-    </div><!-- Container ends -->
-
-    <!-- footer -->
-    <?php require $inc_path . 'footer.inc.php'; ?>
-
-</body>
-</html>

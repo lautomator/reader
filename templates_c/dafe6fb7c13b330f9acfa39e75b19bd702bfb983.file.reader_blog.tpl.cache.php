@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 17:45:02
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 22:40:30
          compiled from "/Applications/XAMPP/htdocs/reader/templates/reader_blog.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1984604310555dfd7e727471-66866093%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dafe6fb7c13b330f9acfa39e75b19bd702bfb983' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/reader_blog.tpl',
-      1 => 1432223083,
+      1 => 1432223148,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/base.tpl',
-      1 => 1431717746,
+      1 => 1432228896,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_555dfd7e77acf0_67485249',
   'variables' => 
   array (
     'reader_yrs' => 0,
     'reader_date' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_555dfd7e77acf0_67485249',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_555dfd7e77acf0_67485249')) {function content_555dfd7e77acf0_67485249($_smarty_tpl) {?>
 
@@ -47,7 +47,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
     <link rel="icon" href="images/TBA" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/reader/htdocs/css/styles.css">
     <script src="js/reader-ga.js"></script>
 
     <title><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
@@ -124,7 +125,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <footer>
         <p>&copy;&nbsp;<?php echo $_smarty_tpl->tpl_vars['reader_yrs']->value;?>
  <?php echo $_smarty_tpl->getConfigVariable('blogAuthor');?>
- | 
+ |
         today's date: <?php echo $_smarty_tpl->tpl_vars['reader_date']->value;?>
 </p>
     </footer><!-- footer ends -->
