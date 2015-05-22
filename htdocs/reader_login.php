@@ -12,6 +12,14 @@ require $inc_path . 'functions.php';
 
 $err = '';
 
+$smarty = new Reader();
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+$smarty->assign('error', $err);
+
+// $smarty->debugging = true;
+$smarty->display('login.tpl');
+
 // Session
 if (isset($_POST['login'])) {
 
@@ -28,14 +36,6 @@ if (isset($_POST['login'])) {
         $err = 'Invalid username or password.';
     }
 }
-
-$smarty = new Reader();
-$smarty->assign('reader_date', $reader_date);
-$smarty->assign('reader_yrs', copyrightYears());
-$smarty->assign('error', $err);
-
-// $smarty->debugging = true;
-$smarty->display('login.tpl');
 
 ?>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 22:40:05
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-22 13:45:24
          compiled from "/Applications/XAMPP/htdocs/reader/templates/blog_post.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:109197042555e422de18865-54014017%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2499cbf47ea5bb88b15556c72eda57caa4eb3fc4' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/blog_post.tpl',
-      1 => 1432240803,
+      1 => 1432294925,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/base.tpl',
-      1 => 1432228896,
+      1 => 1432293951,
       2 => 'file',
     ),
   ),
@@ -51,6 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="stylesheet" type="text/css"
         href="http://localhost/reader/htdocs/css/styles.css">
     <script src="js/reader-ga.js"></script>
+    <script src="js/reader-scripts.js"></script>
 
     <title><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
 </title>
@@ -97,10 +98,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <input type="submit" name="list" value="Cancel"
                 id="list">
             <!-- clear the form -->
-            <!-- <input type="submit" name="clear" value="Clear"
-                id="clear"> -->
+            <input type="submit" name="clear" value="Clear"
+                id="clear">
         </p>
     </form>
+
+    <!-- clear the form -->
+    <script type="text/javascript">
+
+        var clearForm = document.getElementById('clear');
+        clearForm.onclick = clearForm.reset();
+
+    </script>
 
 
 

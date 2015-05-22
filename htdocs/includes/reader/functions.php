@@ -69,3 +69,45 @@ function dbConnectRead() {
 
     return $result;
 }
+
+
+// verify fields have been completed
+function verifyFields($f1, $f2) {
+
+    $error = '';
+
+    if ($f1 || $f2 != null) {
+
+        $OK = false;
+        $conn = dbConnect('write');
+        $stmt = $conn->stmt_init();
+
+        $sql = 'INSERT INTO blog (title, article, created)
+            VALUES(?, ?, NOW())';
+
+        if ($stmt->prepare($sql)) {
+            $stmt->bind_param('ss', htmlspecialchars($f1), htmlspecialchars($f2));
+            $stmt->execute();
+            if ($stmt->affected_rows > 0) {
+
+                $OK = true;
+            }
+        }
+
+        // redirect upon success or display error
+        if ($OK) {
+
+            header('Location: blog_list.php');
+            exit;
+
+        } else {
+
+            $error = $stmt->error;
+        }
+    } else {
+
+        $error = "All fields must be completed.";
+    }
+
+    return $error;
+}

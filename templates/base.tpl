@@ -15,8 +15,11 @@
     <link rel="icon" href="images/TBA" type="image/x-icon">
     <link rel="stylesheet" type="text/css"
         href="http://localhost/reader/htdocs/css/styles.css">
+<!-- 
     <script src="js/reader-ga.js"></script>
 
+    <script src="js/reader-scripts.js"></script>
+ -->
     <title>{#blogTitle#}</title>
 
 </head>

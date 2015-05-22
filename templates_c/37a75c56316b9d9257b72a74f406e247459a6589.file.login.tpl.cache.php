@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-21 22:01:17
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-05-22 13:36:25
          compiled from "/Applications/XAMPP/htdocs/reader/templates/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1228566708555657344eb7a6-96909021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '37a75c56316b9d9257b72a74f406e247459a6589' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/login.tpl',
-      1 => 1431980936,
+      1 => 1432037745,
       2 => 'file',
     ),
     '843c95a1efa1c83f84645f7f264efadf38cc8349' => 
     array (
       0 => '/Applications/XAMPP/htdocs/reader/templates/base.tpl',
-      1 => 1432228896,
+      1 => 1432293951,
       2 => 'file',
     ),
   ),
@@ -51,6 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="stylesheet" type="text/css"
         href="http://localhost/reader/htdocs/css/styles.css">
     <script src="js/reader-ga.js"></script>
+    <script src="js/reader-scripts.js"></script>
 
     <title><?php echo $_smarty_tpl->getConfigVariable('blogTitle');?>
 </title>

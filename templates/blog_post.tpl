@@ -30,9 +30,17 @@
             <input type="submit" name="list" value="Cancel"
                 id="list">
             <!-- clear the form -->
-            <!-- <input type="submit" name="clear" value="Clear"
-                id="clear"> -->
+            <input type="submit" name="clear" value="Clear"
+                id="clear">
         </p>
     </form>
+
+    <!-- clear the form -->
+    <script type="text/javascript">
+
+        var clearForm = document.getElementById('clear');
+        clearForm.onclick = clearForm.reset();
+
+    </script>
 
 {/block}

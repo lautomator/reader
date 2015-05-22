@@ -12,6 +12,14 @@ require_once $inc_path . 'connection.inc.php';
 
 require $inc_path . 'functions.php';
 
+$smarty = new Reader();
+$smarty->assign('reader_date', $reader_date);
+$smarty->assign('reader_yrs', copyrightYears());
+$smarty->assign('entries_read', dbConnectRead());
+
+// $smarty->debugging = true;
+$smarty->display('reader_blog.tpl');
+
 // insert an entry
 if (isset($_POST['insert'])) {
 
@@ -25,13 +33,5 @@ if (isset($_POST['list'])) {
     header('Location: admin/blog_list.php');
     exit;
 }
-
-$smarty = new Reader();
-$smarty->assign('reader_date', $reader_date);
-$smarty->assign('reader_yrs', copyrightYears());
-$smarty->assign('entries_read', dbConnectRead());
-
-// $smarty->debugging = true;
-$smarty->display('reader_blog.tpl');
 
 ?>
