@@ -6,8 +6,7 @@ require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
 require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
     'reader/connection.inc.php';
 
-function validatePwd($un, $pw)
-{
+function validatePwd($un, $pw) {
     // trim
     $username = trim($un);
     $password = trim($pw);

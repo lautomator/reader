@@ -10,8 +10,7 @@ require('/Applications/XAMPP/xamppfiles/lib/smarty-3.1.13/Smarty.class.php');
 
 class Reader extends Smarty {
 
-   function __construct()
-   {
+   function __construct() {
 
         parent::__construct();
 

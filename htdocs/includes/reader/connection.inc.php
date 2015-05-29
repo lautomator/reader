@@ -5,8 +5,7 @@ require 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
 
 // Connect
 
-function dbConnect($usertype, $connectionType = 'mysqli')
-{
+function dbConnect($usertype, $connectionType = 'mysqli') {
 
 // === Edit these vars only === //
 

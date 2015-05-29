@@ -8,7 +8,7 @@ session_start();
 ob_start();
 
 // Set a time limit in seconds.
-$timelimit = 600;
+$timelimit = 1800;
 
 // Get the current time.
 $now = time();
