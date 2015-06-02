@@ -1,7 +1,6 @@
 <?php
 
-require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-    'reader/config.inc.php';
+$inc_path = '/home/automato/lib/php/includes/reader/';
 
 require $inc_path . 'connection.inc.php';
 
@@ -31,7 +30,7 @@ if (isset($_GET['article_id']) && !$_POST) {
 if (isset($_POST ['update'])) {
 
     // prepare update query
-    if (!empty($_POST['article'])) {
+    if (!empty($_POST['image_id'])) {
 
         $sql = 'UPDATE blog SET image_id = ?, title = ?, article = ?
             WHERE article_id = ?';
@@ -99,12 +98,12 @@ if (isset($_POST['cancel'])) {
 
     <div id="page">
 
-        <header><h1>Reader</h1></header>
+        <h1>Reader</h1>
 
-        <!-- Main content  -->
+        <!--// Main content  //-->
         <div id="main_content">
 
-            <!-- The update record form -->
+            <!--// The update record form //-->
             <h2>Update</h2>
 
             <?php
@@ -148,13 +147,13 @@ if (isset($_POST['cancel'])) {
                     <input name="article_id" type="hidden"
                         value="<?php echo $article_id; ?>">
                 </p>
-            </form><!-- End of update form -->
+            </form><!--// End of update form //-->
             <?php
             }
             ?>
-        </div><!-- Main content ends -->
+        </div><!--// Main content ends //-->
 
-    </div><!-- Container ends -->
+    </div><!--// Container ends //-->
 
     <!-- footer -->
     <?php require $inc_path . 'footer.inc.php'; ?>

@@ -1,8 +1,2 @@
 .DS_Store
-_backup.sh
-htdocs/_includes
-htdocs/_update.sh
-db
-cache
-config.inc.php
 

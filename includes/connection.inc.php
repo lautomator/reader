@@ -1,11 +1,9 @@
 <?php
 
-require 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-    'reader/config.inc.php';
-
 // Connect
 
-function dbConnect($usertype, $connectionType = 'mysqli') {
+function dbConnect($usertype, $connectionType = 'mysqli')
+{
 
 // === Edit these vars only === //
 
@@ -15,12 +13,12 @@ function dbConnect($usertype, $connectionType = 'mysqli') {
     if ($usertype == 'read') {
 
         $user = 'root';
-        $pwd = 'xampp';
+        $pwd = 'root';
 
     } elseif ($usertype == 'write') {
 
         $user = 'root';
-        $pwd = 'xampp';
+        $pwd = 'root';
 
 // ============================ //
 

@@ -1,7 +1,6 @@
 <?php
 
-require_once 'file:///Applications/XAMPP/xamppfiles/lib/php/includes/' .
-    'reader/config.inc.php';
+$inc_path = '/home/automato/lib/php/includes/reader/';
 
 require_once $inc_path . 'connection.inc.php';
 
@@ -81,12 +80,12 @@ if (isset($_POST['cancel']) || isset($_POST['list'])) {
 
     <div id="page">
 
-        <header><h1>Reader</h1></header>
+        <h1>Reader</h1>
 
-        <!-- Main content  -->
+        <!--// Main content  //-->
         <div id="main_content">
 
-            <!-- The update record form -->
+            <!--// The update record form //-->
             <h2>Confirm/Delete</h2>
             <?php
             if (isset($error)) {
@@ -111,23 +110,23 @@ if (isset($_POST['cancel']) || isset($_POST['list'])) {
                         id="delete">
                     </p>
 
-                </form><!-- End of update form -->
+                </form><!--// End of update form //-->
 
             <?php
             } else {?>
 
                 <p><em>Record deleted.</em></p>
                 <form id="form2" action="" method="post">
-                    <!--.. List existing entries -->
+                    <!--.. List existing entries //-->
                     <input type="submit" name="list"
                         value="List existing entries" id="list">
                 </form>
             <?php
             }
             ?>
-        </div><!-- Main content ends -->
+        </div><!--// Main content ends //-->
 
-    </div><!-- Container ends -->
+    </div><!--// Container ends //-->
 
     <!-- footer -->
     <?php require $inc_path . 'footer.inc.php'; ?>
