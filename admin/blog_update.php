@@ -1,6 +1,6 @@
 <?php
 
-$inc_path = '/home/automato/lib/php/includes/reader/';
+$inc_path = '/Applications/XAMPP/xamppfiles/lib/php/includes/reader/';
 
 require $inc_path . 'connection.inc.php';
 

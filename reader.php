@@ -1,8 +1,8 @@
 <?php
 
-$inc_path = '/home/automato/lib/php/includes/reader/';
+$inc_path = '/Applications/XAMPP/xamppfiles/lib/php/includes/reader/';
 
-require_once $inc_path . 'session_timeout.inc.php';
+// require_once $inc_path . 'session_timeout.inc.php';
 
 require_once $inc_path . 'connection.inc.php';
 
@@ -39,17 +39,6 @@ if (isset($_POST['list'])) {
     <title>Reader</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-    <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-56241017-1', 'auto');
-            ga('send', 'pageview');
-
-    </script>
 
 </head>
 
